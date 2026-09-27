@@ -5,6 +5,7 @@ from langchain_groq import ChatGroq
 from langchain_mistralai import ChatMistralAI
 from langchain_tavily import TavilySearch
 from langgraph.prebuilt import ToolNode
+from langgraph.graph import END
 
 load_dotenv()
 
@@ -134,7 +135,6 @@ def should_use_tool(state: dict) -> str:
 
 
 def should_stop_looping(state: dict):
-    from langgraph.graph import END
 
     if state["is_approved"]:
         print("Post has been approved.\n")

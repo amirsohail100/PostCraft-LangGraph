@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page-head">
+      <span class="tag">WRITER · REVIEWER LOOP</span>
+      <h1>Turn a topic into a publish-ready post.</h1>
+    </header>
+
+    <section class="feed">
+      <label for="topic">Topic</label>
+      <input id="topic" type="text" placeholder="e.g. Why small teams ship faster" />
+      <button id="genBtn">
+        <span class="dot"></span>
+        <span id="genBtnLabel">Generate post</span>
+      </button>
+      <p class="hint">Writer drafts it (searches the web if needed), a reviewer checks it — up to 3 rounds.</p>
+      <p id="errorMsg" class="error" role="alert"></p>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="verdict-row">
+        <span id="verdictBadge" class="verdict-badge"></span>
+        <span id="attemptNote" class="attempt-note"></span>
+      </div>
+
+      <article class="post-card">
+        <div class="post-card-head">
+          <div class="avatar"></div>
+          <div>
+            <div class="post-name">Your Name</div>
+            <div class="post-sub">Posting about: <span id="postTopic"></span></div>
+          </div>
+        </div>
+        <div class="post-body" id="postBody"></div>
+      </article>
+
+      <div class="feedback" id="feedbackBox" hidden>
+        <h2>Reviewer feedback</h2>
+        <p id="feedbackText"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
